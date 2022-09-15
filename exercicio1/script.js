@@ -16,22 +16,33 @@ let objeto = {
     profissao: "Dev das estrelas",
     username: "astrodev_labenu",
     senha: "melhorDeTodos"
-  }
-  
-  const func1 = (teste) => {
-    let maiusculo = `${objeto.nome}\n${objeto.profissao}\n${objeto.username}\n${objeto.senha}`
-    return maiusculo.toUpperCase()
-  }
-  
-  console.log(func1(objeto))
+}
 
-  const func2 = (teste) => {
-    let corrido = `${objeto.nome}${objeto.profissao}${objeto.username}${objeto.senha}`
-    return corrido.toUpperCase()
+const func1 = () => {
+for(let propriedade in objeto){
+  console.log(objeto[propriedade].toUpperCase())
+}
+}
+func1(objeto)
+
+const func2 = (teste) => {
+  const arrayDoObjeto = []
+  for(let propriedade in objeto){
+    arrayDoObjeto.push(objeto[propriedade])
   }
-  
+  return arrayDoObjeto.join()
+  }
   console.log(func2(objeto))
 
-  const atividade3 = (objeto, func1)=>{
 
+  // atividade3 
+
+  const func3 = (func1, func2) => {
+    for(let propriedade in objeto){
+      console.log(objeto[propriedade].toUpperCase())
+    }
+    let resultadoFinal = func2(func1)
+    return resultadoFinal
   }
+
+  console.log(func3(func1, func2))
